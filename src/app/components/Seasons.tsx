@@ -1,10 +1,39 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Seasons() {
   const [isWinter, setIsWinter] = useState(true);
+  const headingRef = useRef(null);
+  const paragraphRef = useRef(null);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "40% center",
+        once: true,
+      },
+    });
+
+    tl.from([headingRef.current, paragraphRef.current], {
+      y: 100,
+      opacity: 0,
+      duration: 1.8,
+      ease: "power3.out",
+      stagger: 0.2,
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -15,7 +44,10 @@ export default function Seasons() {
   }, []);
 
   return (
-    <section className="w-full min-h-screen py-16 px-4 md:px-8 lg:px-16 lg:flex lg:items-center overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="w-full min-h-screen py-16 px-4 md:px-8 lg:px-16 lg:flex lg:items-center overflow-hidden bg-[#FFFFF0]"
+    >
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:scale-150 lg:transform lg:origin-center">
         <div
           className="w-full lg:w-1/2 relative aspect-[4/3] rounded-2xl overflow-hidden max-w-[800px] max-h-[600px] shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.4)] transition-shadow duration-300"
@@ -69,10 +101,16 @@ export default function Seasons() {
         </div>
 
         <div className="w-full lg:w-1/2 text-center lg:text-left">
-          <h2 className="text-4xl md:text-4xl lg:text-5xl font-cinzel mb-6">
+          <h2
+            ref={headingRef}
+            className="text-4xl md:text-4xl lg:text-5xl font-cinzel mb-6"
+          >
             Refugiul tău în orice anotimp
           </h2>
-          <p className="text-md md:text-xl font-fauna-one leading-relaxed">
+          <p
+            ref={paragraphRef}
+            className="text-md md:text-xl font-fauna-one leading-relaxed"
+          >
             Timpul trece, dar frumusetea este vesnic prezenta aici. Verdele crud
             al primaverii sau albul pur al iernii te va fermeca indiferent de
             anotimp.
