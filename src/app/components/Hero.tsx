@@ -84,11 +84,6 @@ export default function Hero() {
             Un refugiu in mijlocul naturii.<br></br>Liniste, bucate alese si
             voie buna!
           </p>
-          <div className="mt-10">
-            <button className="rounded-md bg-white px-6 py-3 text-lg font-semibold text-black shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
-              Get Started
-            </button>
-          </div>
         </div>
       </div>
     </section>
