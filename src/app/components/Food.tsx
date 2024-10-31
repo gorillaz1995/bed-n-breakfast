@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Food() {
   const [currentImage, setCurrentImage] = useState(0);
+  const [imageHeight, setImageHeight] = useState("auto");
   const headingRef = useRef(null);
   const paragraphRef = useRef(null);
   const sectionRef = useRef(null);
@@ -36,7 +37,7 @@ export default function Food() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 70%", // Triggers when the top of the section hits 80% from the top of viewport
+        start: "top 70%",
         once: true,
       },
     });
@@ -61,6 +62,19 @@ export default function Food() {
 
     return () => clearInterval(interval);
   }, [images.length]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setImageHeight(
+        window.innerWidth < 1000 ? "calc(56.25vw * 1.25)" : "auto"
+      );
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <section
@@ -95,7 +109,7 @@ export default function Food() {
             transform: "translateZ(0)",
             WebkitTransform: "translateZ(0)",
             aspectRatio: "16/9",
-            height: window.innerWidth < 1000 ? "calc(56.25vw * 1.25)" : "auto",
+            height: imageHeight,
           }}
         >
           <style jsx>{`
