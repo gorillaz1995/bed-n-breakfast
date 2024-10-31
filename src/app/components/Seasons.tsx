@@ -46,9 +46,9 @@ export default function Seasons() {
   return (
     <section
       ref={sectionRef}
-      className="w-full min-h-screen py-16 px-4 md:px-8 lg:px-16 lg:flex lg:items-center overflow-hidden bg-[#FFFFF0]"
+      className="w-full min-h-screen py-16 px-4 md:px-8 lg:px-16 lg:flex lg:items-center overflow-hidden bg-[#FFFFF0] pb-24"
     >
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:scale-150 lg:transform lg:origin-center">
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-6 lg:scale-125 lg:transform lg:origin-center">
         <div
           className="w-full lg:w-1/2 relative aspect-[4/3] rounded-2xl overflow-hidden max-w-[800px] max-h-[600px] shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.4)] transition-shadow duration-300"
           style={{
@@ -103,17 +103,19 @@ export default function Seasons() {
         <div className="w-full lg:w-1/2 text-center lg:text-left">
           <h2
             ref={headingRef}
-            className="text-4xl md:text-4xl lg:text-5xl font-cinzel mb-6"
+            className="text-4xl md:text-4xl lg:text-4xl font-cinzel mb-6"
           >
             Refugiul tău în orice anotimp
           </h2>
           <p
             ref={paragraphRef}
-            className="text-md md:text-xl font-fauna-one leading-relaxed"
+            className="text-md md:text-lg lg:text-lg font-fauna-one leading-relaxed"
           >
             Timpul trece, dar frumusetea este vesnic prezenta aici. Verdele crud
             al primaverii sau albul pur al iernii te va fermeca indiferent de
-            anotimp.
+            anotimp.<br></br>Te invitam la o sedinta foto in straie traditionale
+            din Maramures; fie ca esti baiat sau fata, mic sau mare avem toate
+            marimile!
           </p>
         </div>
       </div>

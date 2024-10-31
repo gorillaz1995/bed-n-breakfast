@@ -103,7 +103,7 @@ export default function Food() {
         </div>
 
         <div
-          className="w-full max-w-5xl mx-auto relative rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.4)] transition-shadow duration-300"
+          className="w-full max-w-5xl mx-auto relative rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.6)] transition-shadow duration-300"
           style={{
             animation: "float 6s ease-in-out infinite",
             transform: "translateZ(0)",
