@@ -12,6 +12,10 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        cinzel: ["var(--font-cinzel)"],
+        "fauna-one": ["var(--font-fauna-one)"],
+      },
     },
   },
   plugins: [],
