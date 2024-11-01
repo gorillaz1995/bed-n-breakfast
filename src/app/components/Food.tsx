@@ -79,19 +79,23 @@ export default function Food() {
   return (
     <section
       ref={sectionRef}
-      className="w-full min-h-screen py-16 px-4 md:px-8 lg:px-16 bg-[#FFFFF0] overflow-hidden"
+      className="w-full min-h-screen py-16 px-4 md:px-8 lg:px-16 overflow-hidden relative before:content-[''] before:absolute before:inset-0 before:bg-[#013220] before:h-[90%] before:z-[-1] after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:h-[20%] after:bg-gradient-to-b after:from-[#013220] after:to-[#E6BE8A] after:z-[-1]"
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 lg:mb-16">
           <h2
             ref={headingRef}
-            className="font-cinzel text-3xl md:text-4xl lg:text-5xl mb-6 text-gray-900"
+            className="font-cinzel text-3xl md:text-4xl lg:text-5xl mb-6 text-[#F7D917]"
           >
             Descoperă gusturile autentice ale Maramureșului
           </h2>
           <p
             ref={paragraphRef}
-            className="font-fauna-one text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed"
+            className="font-fauna-one text-lg md:text-xl text-[#D4AF37] max-w-4xl mx-auto leading-relaxed"
+            style={{
+              textShadow: "0 0 3px rgba(247, 217, 23, 0.3)",
+              animation: "textGlow 2s ease-in-out infinite",
+            }}
           >
             Bucură-te de preparate tradiționale pregătite cu grijă, folosind
             ingrediente proaspete din inima munților. Carnea de cea mai bună

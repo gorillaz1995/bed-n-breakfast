@@ -32,6 +32,7 @@ export default function Merged() {
     }).to(
       heroRef.current,
       {
+        backgroundColor: "#E6BE8A",
         opacity: 0,
         duration: 0.5,
         ease: "none",
@@ -51,7 +52,7 @@ export default function Merged() {
       </div>
       <div
         ref={seasonsRef}
-        className="absolute inset-0 bg-[#FFFFF0]"
+        className="absolute inset-0 bg-[#E6BE8A]"
         style={{ zIndex: 2 }}
       >
         <Seasons />

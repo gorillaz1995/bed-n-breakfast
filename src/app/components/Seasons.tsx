@@ -46,7 +46,7 @@ export default function Seasons() {
   return (
     <section
       ref={sectionRef}
-      className="w-full min-h-screen py-16 px-4 md:px-8 lg:px-16 lg:flex lg:items-center overflow-hidden bg-[#FFFFF0] pb-24"
+      className="w-full min-h-screen py-16 px-4 md:px-8 lg:px-16 lg:flex lg:items-center overflow-hidden bg-[#013220] pb-24"
     >
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-6 lg:scale-125 lg:transform lg:origin-center">
         <div
@@ -103,13 +103,17 @@ export default function Seasons() {
         <div className="w-full lg:w-1/2 text-center lg:text-left">
           <h2
             ref={headingRef}
-            className="text-4xl md:text-4xl lg:text-4xl font-cinzel mb-6"
+            className="text-4xl md:text-4xl lg:text-4xl font-cinzel mb-6 text-[#F7D917]"
           >
             Refugiul tău în orice anotimp
           </h2>
           <p
             ref={paragraphRef}
-            className="text-md md:text-lg lg:text-lg font-fauna-one leading-relaxed"
+            className="text-md md:text-lg lg:text-lg font-fauna-one leading-relaxed text-[#D4AF37]"
+            style={{
+              textShadow: "0 0 3px rgba(247, 217, 23, 0.3)",
+              animation: "textGlow 2s ease-in-out infinite",
+            }}
           >
             Timpul trece, dar frumusetea este vesnic prezenta aici. Verdele crud
             al primaverii sau albul pur al iernii te va fermeca indiferent de
